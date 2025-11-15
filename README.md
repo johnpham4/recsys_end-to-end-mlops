@@ -15,7 +15,7 @@ This project showcases a complete **MLOps pipeline** for building and deploying 
 
 <div align="center">
 
-![Demo Video](./images/demo-video.mp4)
+![Demo Video](./images/demo.mp4)
 
 </div>
 
