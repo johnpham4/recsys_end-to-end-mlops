@@ -391,8 +391,5 @@ make clean  # Remove all containers and data
 ---
 
 ## 📞 Contact
-- **Author**: [Your Name]
-- **LinkedIn**: [Your LinkedIn]
-- **Email**: [your.email@domain.com]
-
-⭐ *If you found this project helpful, please give it a star!*
+- **Author**: [Minh Pham]
+- **Email**: [minhjohn4@gmail.com]
