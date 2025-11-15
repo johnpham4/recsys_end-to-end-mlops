@@ -1,0 +1,10 @@
+gradio==4.44.1
+pandas<2.2.0
+python-multipart==0.0.12
+redis<6.0.0,>=5.1.0
+sqlalchemy<2.0
+psycopg2-binary<3.0.0,>=2.9.9
+pydantic<3.0.0,>=2.9.0
+python-dotenv<2.0.0,>=1.0.1
+loguru<1.0.0,>=0.7.2
+huggingface_hub<0.20.0

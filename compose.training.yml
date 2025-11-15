@@ -1,0 +1,41 @@
+services:
+  training_pipeline:
+    build:
+      context: .
+      dockerfile: training.Dockerfile
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow_server:5000
+      - POSTGRES_HOST=dwh
+      - FEAST_OFFLINE_SERVER_HOST=feature_offline_server
+      - S3_ENDPOINT_URL=https://s3.ap-southeast-2.amazonaws.com
+    volumes:
+      - ./notebooks/output:/app/notebooks/output
+      - ./data:/app/data
+    entrypoint: ["uv", "run", "001-train-pipeline.py"]
+    networks:
+      - recsys
+
+  batch_reco_pipeline:
+    build:
+      context: .
+      dockerfile: training.Dockerfile
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow_server:5000
+      - REDIS_HOST=redis
+      - QDRANT_HOST=http://qdrant
+      - FEAST_OFFLINE_SERVER_HOST=feature_offline_server
+      - S3_ENDPOINT_URL=https://s3.ap-southeast-2.amazonaws.com
+    volumes:
+      - ./notebooks/output:/app/notebooks/output
+      - ./data:/app/data
+    entrypoint: ["uv", "run", "002-batch-rec-pipeline.py"]
+    networks:
+      - recsys
+
+networks:
+  recsys:
+    external: true

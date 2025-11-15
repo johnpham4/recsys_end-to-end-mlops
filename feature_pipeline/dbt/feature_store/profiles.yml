@@ -1,0 +1,12 @@
+feature_store:
+  outputs:
+    dev:
+      dbname: dwh
+      host: localhost
+      pass: recsysmvp
+      port: 5432
+      schema: feature_store_offline
+      threads: 1
+      type: postgres
+      user: recsysmvp
+  target: dev
