@@ -19,6 +19,7 @@ dependencies = [
     "openai<2.0.0,>=1.54.1",
     "papermill>=2.6.0",
 ]
+
 name = "recsys-mvp"
 version = "0.1.0"
 description = ""

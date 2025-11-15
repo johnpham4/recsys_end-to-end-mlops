@@ -31,6 +31,7 @@ for name, cfg in model_cfg.items():
     )
 
 
+
 @bentoml.service(name="seqrp_service")
 class SeqRPService:
     model_name = "sequence"
