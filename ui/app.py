@@ -80,19 +80,35 @@ def process_likes(*responses):
     item_sequences = []
 
     for i, r in enumerate(responses):
+        if r is None:  # Skip if no selection
+            continue
+
         title = recs_df.iloc[i]["title"]
         item_id = recs_df.iloc[i]["item_id"]
         item_display = f"{title} ({item_id})"
-        if r == "👍":
+
+        if r == "👍 Like":
             liked_items.append(item_display)
             item_sequences.append(item_id)
-        if r == "👎":
+        elif r == "👎 Dislike":
             disliked_items.append(item_display)
             item_sequences.append(item_id)
 
-    push_new_item_sequence(user_id, item_sequences)
+    # Only push to sequence if there are any ratings
+    if item_sequences:
+        push_new_item_sequence(user_id, item_sequences)
 
-    return f"You liked: {liked_items}\nYou disliked: {disliked_items}"
+    result = ""
+    if liked_items:
+        liked_text = ", ".join(liked_items)
+        result += f"You liked: {liked_text}\n"
+    if disliked_items:
+        disliked_text = ", ".join(disliked_items)
+        result += f"You disliked: {disliked_text}\n"
+    if not liked_items and not disliked_items:
+        result = "No ratings selected. Please choose 👍 Like or 👎 Dislike for items."
+
+    return result
 
 with gr.Blocks(
     theme=gr.themes.Base(

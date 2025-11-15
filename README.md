@@ -2,6 +2,23 @@
 
 > **A production-ready recommendation system implementing modern MLOps practices with feature stores, model training pipelines, and real-time API serving.**
 
+This project showcases a complete **MLOps pipeline** for building and deploying recommendation systems at scale. It demonstrates real-world engineering practices including:
+
+- 🔄 **Automated Feature Engineering** - Real-time feature stores with Feast
+- 🤖 **Model Training & Versioning** - MLflow experiment tracking with PyTorch
+- 🚀 **Production Deployment** - FastAPI microservices with Docker
+- 📊 **Workflow Orchestration** - Airflow DAGs for end-to-end automation
+- 📈 **Performance Monitoring** - Comprehensive logging and metrics
+- 🎯 **Scalable Architecture** - Containerized services with Redis caching
+
+### 🎥 Project Demo
+
+<div align="center">
+
+![Demo Video](./images/demo-video.mp4)
+
+</div>
+
 ![Two-stage Pipeline](./images/Two-stage-pipeline.png)
 
 ## 🏗️ Architecture Overview
