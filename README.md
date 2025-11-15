@@ -13,14 +13,7 @@ This project showcases a complete **MLOps pipeline** for building and deploying 
 
 ### 🎥 Project Demo
 
-<div align="center">
-
-**[🎬 Watch Full Demo Video (8MB)](./images/demo.mp4)**
-
-*Complete walkthrough: Setup → Feature Pipeline → Model Training → API Deployment → Real-time Recommendations*
-
-</div>
-
+![Demo](./images/demo.gif)
 
 ## 🏗️ Architecture Overview
 
